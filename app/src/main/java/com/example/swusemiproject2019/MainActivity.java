@@ -11,15 +11,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 테스트 코드 1
-// 소스도 수정
-        // 오늘 컨디션 중간~~~
 
-        // 커밋 및 push 테스트
 
-        // 가나다라 마바사
-        //음........
-        
+
 
 
     }

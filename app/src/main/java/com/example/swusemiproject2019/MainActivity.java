@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String vvar = "aaa";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
         // 가나다라 마바사
         //음........
-        
 
+        //송종우 강사가 쓴 소스다.
+        //작업1.
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/etvMemo"
+        android:id="@+id/etMemo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="내용을 입력해주세요."

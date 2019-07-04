@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="메모 상세보기"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:layout_marginVertical="10dp"/>
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
@@ -41,14 +41,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="수정"
-                android:textSize="30dp"/>
+                android:textSize="20dp"/>
             <Button
                 android:id="@+id/btnErase"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="삭제"
-                android:textSize="30dp"/>
+                android:textSize="20dp"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -88,19 +88,30 @@ public class SignUpActivity extends AppCompatActivity {
                 String pwd = editInputPwd.getText().toString();
                 String cPwd = editConfirmPwd.getText().toString();
 
+                // 존재하는 id인지 확인
+                if(!id.isEmpty()){
+                    if(!db.checkMember(id)){
+                        Toast.makeText(getApplicationContext(),"존재하는 ID입니다.", Toast.LENGTH_LONG).show();
+                    }
 
-                // 비어있는 칸 존재하면 알림 띄움
-                if(id.isEmpty() || name.isEmpty()
-                        || pwd.isEmpty() || cPwd.isEmpty()
-                        || (imgUri == null)){
-                    Toast.makeText(getApplicationContext(), "정보를 모두 입력해주세요!", Toast.LENGTH_LONG).show();
-                }else{
-                    Log.d(TAG,"회원가입 성공!");
-                    Member member = new Member(id, name, pwd, imgUri);
-                    db.saveMember(member);
-                    db.updateMembers();
-                    finish();
+                    if(!pwd.isEmpty() || !cPwd.isEmpty()){
+                        if(!pwd.equals(cPwd)){
+                            // pwd와 cPwd에 입력된 값 일치하는지 확인
+                        Toast.makeText(getApplicationContext(), "비밀번호와 비밀번호확인이 일치하지 않습다.",Toast.LENGTH_LONG).show();
+                        }else if(name.isEmpty() || (imgUri == null)){ // 비어있는 칸 존재하면 알림 띄움
+                            Toast.makeText(getApplicationContext(), "정보를 모두 입력해주세요!", Toast.LENGTH_LONG).show();
+                        }else{
+                            Log.d(TAG,"회원가입 성공!");
+                            Member member = new Member(id, name, pwd, imgUri.toString());
+                            Log.d(TAG, "저장된 member: "+member.toString());
+                            db.saveMember(member);
+                            db.updateMembers();
+                            finish();
+                        }
+                    }
                 }
+
+
 
 
             }

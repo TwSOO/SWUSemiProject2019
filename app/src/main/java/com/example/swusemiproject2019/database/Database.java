@@ -3,6 +3,7 @@ package com.example.swusemiproject2019.database;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.example.swusemiproject2019.model.Member;
 import com.google.gson.Gson;
@@ -48,13 +49,28 @@ public class Database {
 
     // 수정해야할 것 같음
     // Member 한명 획득
-    public Member getMember(int index){
-        return members.get(index);
+    public Member getMember(String id){
+        Member tempMember = null;
+        for(int i=0; i < members.size(); i++){
+            Log.d("Database", ""+members.size());
+            tempMember = members.get(i);
+            if(tempMember.getId().equals(id)){
+                return tempMember;
+            }
+        }
+        return null;
     }
 
     // 중복 멤버 존재 여부 검사
-    public void checkMember(String id){
-
+    public boolean checkMember(String id){
+        boolean isTrue = false;
+        Member tempMember = inst.getMember(id);
+        if(tempMember == null){
+            return isTrue;
+        }else{
+            isTrue = true;
+            return isTrue;
+        }
     }
 
     // List<Member> members 획득

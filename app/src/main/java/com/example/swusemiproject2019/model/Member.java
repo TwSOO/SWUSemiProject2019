@@ -5,15 +5,21 @@ import android.net.Uri;
 import java.util.List;
 
 public class Member {
-    private Uri imgUri;
+    private String imgUri;
     private String id;
     private String pwd;
     private String name;
-    private List<Memo> memos = null;
+    private List<Memo> memos;
 
     //Constructor
-    public Member(){};
-    public Member(String id, String name, String pwd, Uri imgUri) {
+    public Member(){
+        imgUri = null;
+        id = "";
+        pwd = "";
+        name = "";
+        memos = null;
+    };
+    public Member(String id, String name, String pwd, String imgUri) {
         this.id = id;
         this.name = name;
         this.pwd = pwd;
@@ -37,11 +43,11 @@ public class Member {
         this.pwd = pwd;
     }
 
-    public Uri getImgUri() {
+    public String getImgUri() {
         return imgUri;
     }
 
-    public void setImgUri(Uri imgUri) {
+    public void setImgUri(String imgUri) {
         this.imgUri = imgUri;
     }
 

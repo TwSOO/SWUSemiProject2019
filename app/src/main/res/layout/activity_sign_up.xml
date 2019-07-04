@@ -23,7 +23,7 @@
         <ImageView
             android:id="@+id/imgvMember"
             android:layout_width="300dp"
-            android:layout_height="200dp" />
+            android:layout_height="150dp" />
         <Button
             android:id="@+id/btnTakePhoto"
             android:layout_width="wrap_content"
@@ -41,37 +41,50 @@
         <EditText
             android:id="@+id/editInputId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:hint="ID입력"
+            android:layout_weight="1"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"/>
+            />
         <EditText
             android:id="@+id/editInputName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:hint="이름 입력"
+            android:layout_weight="1"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"/>
+            />
         <EditText
             android:id="@+id/editInputPwd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:hint="비밀번호 입력"
+            android:layout_weight="1"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"/>
+            />
         <EditText
             android:id="@+id/editConfirmPwd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:hint="비밀번호 확인"
+            android:layout_weight="1"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"/>
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="회원가입"
-            android:layout_marginLeft="50dp"/>
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="회원가입"
+                android:layout_weight="2"
+                android:layout_marginHorizontal="20dp"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 
 

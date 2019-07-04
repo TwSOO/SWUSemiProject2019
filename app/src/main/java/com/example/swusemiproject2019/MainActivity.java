@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        // 로드하기
+        
 
 
-
-    }
+    } //onCreate()
 }

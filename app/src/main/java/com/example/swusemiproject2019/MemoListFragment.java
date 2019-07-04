@@ -47,7 +47,7 @@ public class MemoListFragment extends Fragment {
         recycler.setLayoutManager(new LinearLayoutManager(getContext())); //리사이클러 뷰 매니저 등록
 
         ///////////////////////////////////////////////// 원본 예비 데이터
-        memos.add(new Memo("메모메모메모메모메모메모메모"));
+        memos.add(new Memo());
         ////////////////////////////////////////////////
 
         // Adapter 생성

@@ -1,4 +1,4 @@
-package com.example.swusemiproject2019.model;
+package com.example.swusemiproject2019;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

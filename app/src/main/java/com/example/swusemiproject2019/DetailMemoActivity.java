@@ -5,10 +5,12 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class DetailMemoActivity extends AppCompatActivity {
 
     private Button btnEdit, btnErase; // 수정버튼, 삭제버튼
+    private ViewPager vpWriteMemo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

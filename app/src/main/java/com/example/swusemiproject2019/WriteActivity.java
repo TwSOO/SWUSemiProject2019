@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.swusemiproject2019.model.TakePhotoFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class WriteActivity extends AppCompatActivity {

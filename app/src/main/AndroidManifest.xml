@@ -11,14 +11,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".DetailMemoActivity"></activity>
         <activity android:name=".WriteActivity" />
-        <activity android:name=".Memo_MemberInfoActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Memo_MemberInfoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

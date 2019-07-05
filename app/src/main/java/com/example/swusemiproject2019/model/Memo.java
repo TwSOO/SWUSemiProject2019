@@ -5,7 +5,7 @@ import android.net.Uri;
 public class Memo {
     String text;
     String time;
-    Uri photo;
+    String photo;
 
     //constructor
     public Memo(){
@@ -14,7 +14,7 @@ public class Memo {
         this.photo=null;
     }
 
-    public Memo(String text, String time, Uri photo) {
+    public Memo(String text, String time, String photo) {
         this.text = text;
         this.time = time;
         this.photo = photo;
@@ -37,11 +37,11 @@ public class Memo {
         this.time = time;
     }
 
-    public Uri getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Uri photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 

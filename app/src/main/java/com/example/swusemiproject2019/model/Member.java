@@ -2,9 +2,10 @@ package com.example.swusemiproject2019.model;
 
 import android.net.Uri;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Member {
+public class Member implements Serializable {
     private String imgUri;
     private String id;
     private String pwd;

@@ -92,6 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if(!id.isEmpty()){
                     if(!db.checkMember(id)){
                         Toast.makeText(getApplicationContext(),"존재하는 ID입니다.", Toast.LENGTH_LONG).show();
+                        return;
                     }
 
                     if(!pwd.isEmpty() || !cPwd.isEmpty()){

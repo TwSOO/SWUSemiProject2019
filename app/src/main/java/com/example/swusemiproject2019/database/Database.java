@@ -107,3 +107,10 @@ public class Database {
 
 
 } // class
+
+
+/*
+    SharedPreferences.Editor editor = sf.edit();
+        editor.clear();
+        editor.commit();
+ */

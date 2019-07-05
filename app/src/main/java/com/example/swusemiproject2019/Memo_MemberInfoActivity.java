@@ -1,23 +1,32 @@
 package com.example.swusemiproject2019;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.swusemiproject2019.model.Member;
 import com.google.android.material.tabs.TabLayout;
 
 public class Memo_MemberInfoActivity extends AppCompatActivity {
     private TabLayout tabMemoMember; // 탭영역
     private ViewPager viewPager; // 탭별 프레그먼트 표시 영역
 
+    private Member currentMember;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo__member_info);
+
+        // 로그인한 멤버변수 획득
+        Intent intent = getIntent();
+        currentMember = (Member) intent.getSerializableExtra("LOGIN");
 
         // 탭, 뷰페이저 획득
         tabMemoMember = findViewById(R.id.tabMemoMember);
@@ -53,7 +62,9 @@ public class Memo_MemberInfoActivity extends AppCompatActivity {
 
             }
         });
-    }
+
+
+    } // onCreate()
 
     // 어댑터 클래스
     private class MemoMemberAdapter extends FragmentPagerAdapter {
@@ -84,5 +95,18 @@ public class Memo_MemberInfoActivity extends AppCompatActivity {
         public int getCount() {
             return this.tabSize;
         }
-    } // class
-}
+    } // Adatper class
+
+    public Member getCurrentMember() {
+        return currentMember;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch(requestCode){
+            case MemoListFragment.WRITE_MEMO:
+
+        }
+    }
+} // class

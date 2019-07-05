@@ -1,5 +1,6 @@
 package com.example.swusemiproject2019;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,12 +11,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.swusemiproject2019.model.Memo;
 import com.google.android.material.tabs.TabLayout;
 
 public class WriteActivity extends AppCompatActivity {
     private Button btnSaveMemo;
     private TabLayout tabWriteMemo;
     private ViewPager vpWriteMemo;
+    private Uri memoImg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,11 @@ public class WriteActivity extends AppCompatActivity {
         btnSaveMemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                MemoTextFragment memoTextFragment =
+                        (MemoTextFragment)getSupportFragmentManager().findFragmentById(R.id.write_memo_fragment);
+                String memoString = memoTextFragment.returnMemoString(); // 메모 내용 문자열
+
+
             }
         });
 
@@ -92,4 +100,11 @@ public class WriteActivity extends AppCompatActivity {
             return tabSize;
         }
     }
+
+
 } // class
+
+
+/*
+    Uri 만드는법 : Uri myUri = Uri.parse("http://www.google.com");
+ */

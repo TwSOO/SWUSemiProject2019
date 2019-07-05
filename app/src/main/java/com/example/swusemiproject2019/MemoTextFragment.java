@@ -17,6 +17,14 @@ public class MemoTextFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_write_memo, container, false);
+        etMemo = view.findViewById(R.id.etMemo);
+
+
+
         return view;
+    }
+
+    public String returnMemoString(){
+        return etMemo.getText().toString();
     }
 } // class

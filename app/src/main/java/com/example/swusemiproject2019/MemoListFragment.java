@@ -2,6 +2,7 @@ package com.example.swusemiproject2019;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemoListFragment extends Fragment {
+    public static final int WRITE_MEMO = 1111;
     private Button btnNewMemo; // 새메모작성 버튼
-    private List<Memo> memos = new ArrayList<>(); // 메모목록에 들어갈 원본데이터 리스트
+    private List<Memo> memos; // 메모목록에 들어갈 원본데이터 리스트
     private RecyclerView recycler;
 
     @Nullable
@@ -37,17 +39,19 @@ public class MemoListFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), WriteActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, WRITE_MEMO);
             }
         });
 
+        // 회원의 메모 리스트 획득
+        memos = ((Memo_MemberInfoActivity)getActivity()).getCurrentMember().getMemos();
 
         // 리사이클러뷰 획득
         recycler = view.findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(getContext())); //리사이클러 뷰 매니저 등록
 
         ///////////////////////////////////////////////// 원본 예비 데이터
-        memos.add(new Memo());
+        //memos.add(new Memo());
         ////////////////////////////////////////////////
 
         // Adapter 생성
@@ -152,8 +156,16 @@ public class MemoListFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return memos.size();
+            if(memos == null){
+                return 0;
+            }else{
+                return memos.size();
+            }
+
+
         }
 
     } // MyAdapter class
+
+
 } // class

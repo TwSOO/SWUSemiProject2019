@@ -45,13 +45,16 @@ public class MainActivity extends AppCompatActivity {
                 if(loginMember != null){
                     if(pwd.equals(loginMember.getPwd())){
                         Intent intent = new Intent(getApplicationContext(), Memo_MemberInfoActivity.class);
+                        intent.putExtra("LOGIN", loginMember);
                         startActivity(intent);
+                    }else{
+                        showDialog();
                     }
+                }else{
+                    showDialog();
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-                builder.setTitle("로그인 실패");
-                builder.setMessage("존재하지 않은 회원이거나 아이디 또는 비밀번호가 일치하지 않습니다.");
-                builder.show();
+
+
             }
         });
         // 회원가입버튼 이벤트
@@ -71,4 +74,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     } //onCreate()
+
+    private void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("로그인 실패");
+        builder.setMessage("존재하지 않는 회원이거나 아이디 또는 비밀번호가 일치하지 않습니다.");
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+
+        //다이얼로그 생성
+        AlertDialog alertDialog = builder.create();
+        builder.show();
+    }
 }
